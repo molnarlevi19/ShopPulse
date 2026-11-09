@@ -22,3 +22,9 @@
 **Why:** PHP runs natively, so Claude Code hooks can call Pint and Pest directly without a container.
 **Trade-off:** Manual setup (php.ini, extensions, PATH) and the environment isn't reproducible for other developers.
 **Alternatives:** Laravel Herd (easier), Docker/Sail or WSL2 (reproducible but slower to set up on Windows).
+
+## 4. PostgreSQL in Docker, PHP native
+**Date:** 2026-11-09
+**Decision:** Run PostgreSQL 18.6 (pinned) via Docker Compose; PHP and Node stay native.
+**Why:** Easy to start, reset and pin versions; native PHP lets hooks run Pint and Pest directly.
+**Trade-off:** Docker must be running; the environment is split between container and host.
